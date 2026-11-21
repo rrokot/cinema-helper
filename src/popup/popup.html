@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <title>Cinema Helper</title>
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <h1>Cinema Helper</h1>
+    <p id="version"></p>
+
+    <label class="row">
+      <input type="checkbox" id="enabled" />
+      <span>Включено</span>
+    </label>
+
+    <fieldset id="features">
+      <legend>Функции</legend>
+      <label class="row">
+        <input type="checkbox" data-feature="cleanUi" />
+        <span>Скрывать рекламу и мешающие элементы</span>
+      </label>
+    </fieldset>
+
+    <script src="../shared/webextension.js"></script>
+    <script src="../shared/settings.js"></script>
+    <script src="popup.js"></script>
+  </body>
+</html>

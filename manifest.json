@@ -1,0 +1,37 @@
+{
+  "manifest_version": 3,
+  "name": "Cinema Helper",
+  "version": "0.2.1",
+  "description": "Улучшает работу с каталогами фильмов и сайтами для просмотра и скачивания.",
+  "permissions": ["storage"],
+  "host_permissions": ["https://kinogo.media/*", "https://kinogo.online/*"],
+  "background": {
+    "service_worker": "src/background/service-worker.js",
+    "scripts": ["src/background/dev-reload.js", "src/shared/kinogo.js", "src/background/service-worker.js"]
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": [
+        "src/shared/webextension.js",
+        "src/shared/settings.js",
+        "src/shared/kinogo.js",
+        "src/content/film-buttons.js",
+        "src/content/sites.js",
+        "src/content/content.js"
+      ],
+      "css": ["src/content/content.css"],
+      "run_at": "document_idle"
+    }
+  ],
+  "action": {
+    "default_title": "Cinema Helper",
+    "default_popup": "src/popup/popup.html"
+  },
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "cinema-helper@example.com",
+      "strict_min_version": "121.0"
+    }
+  }
+}

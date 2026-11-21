@@ -1,0 +1,125 @@
+.cinema-helper .cinema-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  box-sizing: border-box;
+  background: color-mix(in srgb, currentColor 5%, transparent);
+  color: inherit;
+  font: inherit;
+  font-weight: 600;
+  line-height: 1;
+  white-space: nowrap;
+  text-decoration: none;
+  cursor: pointer;
+  transition:
+    background 0.2s,
+    transform 0.2s;
+}
+
+.cinema-helper .cinema-btn:hover {
+  background: color-mix(in srgb, currentColor 10%, transparent);
+}
+
+.cinema-helper .cinema-btn:active {
+  transform: scale(0.96);
+}
+
+.cinema-helper .cinema-btn:focus-visible {
+  outline: 2px solid color-mix(in srgb, currentColor 40%, transparent);
+  outline-offset: 2px;
+}
+
+.cinema-helper .cinema-btn--kinogo {
+  --cinema-kinogo-status-color: #9e9e9e;
+}
+
+.cinema-helper .cinema-btn--kinogo::before {
+  content: "";
+  flex: none;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--cinema-kinogo-status-color);
+}
+
+.cinema-helper .cinema-btn--kinogo[data-status="found"] {
+  --cinema-kinogo-status-color: #3bb33b;
+}
+
+.cinema-helper .cinema-btn--kinogo[data-status="loading"]::before {
+  animation: cinema-kinogo-pulse 1s ease-in-out infinite alternate;
+}
+
+.cinema-helper .cinema-btn--kinogo[data-status="not-found"],
+.cinema-helper .cinema-btn--kinogo[data-status="unavailable"] {
+  color: color-mix(in srgb, currentColor 55%, transparent);
+}
+
+.cinema-helper .cinema-btn--kinogo[data-status="unavailable"] {
+  --cinema-kinogo-status-color: #e0a030;
+}
+
+.cinema-helper .cinema-btn[data-site="kinopoisk"] {
+  height: 52px;
+  margin-inline-start: 8px;
+  padding: 0 24px;
+  border-radius: 52px;
+  font-size: 16px;
+}
+
+.cinema-helper .cinema-btn--kinogo[data-site="kinopoisk"] {
+  padding-inline-start: 20px;
+}
+
+.cinema-helper .cinema-btn[data-site="kinopoisk"][data-place="title"] {
+  height: 32px;
+  margin: 8px 8px 0 0;
+  padding: 0 14px;
+  gap: 8px;
+  font-size: 13px;
+}
+
+.cinema-helper .cinema-myshows-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 16px 0 4px;
+}
+
+.cinema-helper .cinema-myshows-buttons[data-place="title"] {
+  margin: 8px 0 12px;
+}
+
+.cinema-helper .cinema-btn[data-site="myshows"] {
+  height: 36px;
+  padding: 0 16px;
+  border-radius: 4px;
+  gap: 8px;
+  font-size: 15px;
+  background: color-mix(in srgb, currentColor 8%, transparent);
+}
+
+.cinema-helper .cinema-btn[data-site="myshows"]:hover {
+  background: color-mix(in srgb, currentColor 14%, transparent);
+}
+
+.cinema-helper .cinema-btn--kinogo[data-site="myshows"] {
+  padding-inline-start: 13px;
+}
+
+@keyframes cinema-kinogo-pulse {
+  from {
+    opacity: 0.25;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cinema-helper .cinema-btn,
+  .cinema-helper .cinema-btn--kinogo[data-status="loading"]::before {
+    transition: none;
+    animation: none;
+  }
+}
