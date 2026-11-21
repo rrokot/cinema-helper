@@ -1,27 +1,38 @@
 # Cinema Helper
 
-Добавляет кнопки Kinogo и Rutracker на страницы фильмов и сериалов в Кинопоиске и MyShows.
+Cinema Helper добавляет кнопки на страницы фильмов и сериалов в Кинопоиске и MyShows.
 
-- **Kinogo** ищет фильм или сериал и открывает найденную страницу или поиск.
-- **Rutracker** ищет раздачи по названию и году. Для просмотра результатов нужен аккаунт Rutracker.
+- **Kinogo** открывает страницу фильма, сериала или поиска на Kinogo.
+- **Rutracker** открывает поиск раздач по названию и году. Чтобы увидеть результаты, войдите в аккаунт Rutracker.
 
 ## Установка
 
-Выберите один способ. После установки обновите страницы Кинопоиска и MyShows, которые уже открыты.
-
 ### Браузеры на Chromium
 
-Скачайте исходники через **Code → Download ZIP** и распакуйте архив. На странице расширений включите режим разработчика, нажмите «Загрузить распакованное» и выберите папку с `manifest.json`.
+1. Скачайте архив проекта через **Code → Download ZIP**.
+2. Распакуйте архив.
+3. Откройте страницу расширений браузера.
+4. Включите режим разработчика.
+5. Нажмите «Загрузить распакованное».
+6. Выберите папку с файлом `manifest.json`.
 
 ### Firefox Developer Edition 121+
 
-Скачайте [cinema-helper.xpi](https://github.com/rrokot/cinema-helper/releases/latest/download/cinema-helper.xpi). В `about:config` задайте `xpinstall.signatures.required = false` для установки неподписанного пакета. Затем в `about:addons` выберите «Установить дополнение из файла…» в меню с шестерёнкой и укажите XPI.
+1. Скачайте [cinema-helper.xpi](https://github.com/rrokot/cinema-helper/releases/latest/download/cinema-helper.xpi).
+2. Откройте `about:config`.
+3. Установите для `xpinstall.signatures.required` значение `false`. Это разрешит установку пакета без подписи.
+4. Откройте `about:addons`.
+5. В меню с шестерёнкой выберите «Установить дополнение из файла…».
+6. Выберите скачанный файл `cinema-helper.xpi`.
 
 ### Tampermonkey 5.3+
 
-[Установите Cinema Helper с GitHub](https://github.com/rrokot/cinema-helper/releases/latest/download/cinema-helper.user.js). Если браузер скачивает файл, вставьте эту ссылку в импорт по URL в панели Tampermonkey.
+1. Откройте [ссылку на установку скрипта](https://github.com/rrokot/cinema-helper/releases/latest/download/cinema-helper.user.js).
+2. Подтвердите установку в Tampermonkey.
 
-Tampermonkey проверяет новые версии по той же ссылке и обновляет скрипт по своим настройкам автообновления.
+Если браузер скачал файл, откройте импорт по URL в панели Tampermonkey. Вставьте ссылку на скрипт. Подтвердите установку.
+
+Tampermonkey проверяет эту ссылку на наличие новой версии. Скрипт обновляется по настройкам Tampermonkey.
 
 ## Лицензия
 
